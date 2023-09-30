@@ -21,6 +21,9 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
+body{
+  place-items: center;
+}
 .LoginWindow{
   width: 450px;
   height: 600px;

@@ -12,7 +12,7 @@ import { RouterLink } from 'vue-router';
         <input type="password" placeholder="Confirm password" id="con-password">
 
     </div>
-    <RouterLink to="/login" id="login">
+    <RouterLink to="/" id="login">
       <button id="reg-but">REGISTER</button>
     </RouterLink>
    </form> 
