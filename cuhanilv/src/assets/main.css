@@ -15,7 +15,10 @@
     display: flex;
     place-items: center;
   }
-
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
   #app {
     display: grid;
     padding: 0 2rem;
