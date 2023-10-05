@@ -21,6 +21,7 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
+@media (min-width: 480px){
 body{
   place-items: center;
 }
@@ -130,6 +131,8 @@ p{
   display:flex;
   position:relative;
   color: var(--color-text);
+}
+
 }
 
 </style>
