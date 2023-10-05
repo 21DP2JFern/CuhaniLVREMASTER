@@ -1,8 +1,5 @@
 <template>
-    <div id="Header">
-        <h1 id="cuhani-text">ČUHANI</h1>
-
-    </div>
+    <div id="Header"></div>
 </template>
 
 <style>
@@ -13,14 +10,6 @@
     width: 100vw;
     height: 5vh;
     background-color: var(--color-element);
- }
-
- #cuhani-text{
-    font-size: 35px;
-    font-weight: bold;
-    display:flex;
-    position:relative;
-    left: 46.5vw;
  }
 </style>
 
