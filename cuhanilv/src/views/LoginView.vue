@@ -21,16 +21,12 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-@media (min-width: 480px){
 body{
   place-items: center;
 }
+
 .LoginWindow{
-  width: 450px;
-  height: 600px;
   background-color: var(--color-element);
-  border-radius: 25px;
-  box-shadow: 0px 0px 300px 50px var(--color-element);
   display:block;
 }
 
@@ -40,11 +36,21 @@ body{
   font-weight: bold;
   display:flex;
   position:relative;
-  left: 69px;
-  top: 40px;
   width:300px;
   margin:0;
   padding:0;
+}
+@media (min-width: 480px){
+
+.LoginWindow{
+  width: 450px;
+  height: 600px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 300px 50px var(--color-element);
+}
+#header{
+  left: 69px;
+  top: 40px;
 }
 
 #input-container{
@@ -133,6 +139,21 @@ p{
   color: var(--color-text);
 }
 
+}
+
+@media (max-width: 480px){
+  .LoginWindow{
+  width: 100vw;
+  height: 600px;
+  top: 10vh;
+  background-color: var(--color-element);
+  position:absolute;
+}
+
+#header{
+  left: 10vw;
+  top: 5vh;
+}
 }
 
 </style>

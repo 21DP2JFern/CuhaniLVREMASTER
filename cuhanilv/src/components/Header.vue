@@ -1,9 +1,9 @@
 <template>
    <div id="Header">
-      <button id="menu-but" @click="toggleSidebar()"><img src="../assets/menu.png" id="menu-img"></button>
+      <button id="menu-but" @click="openmenu()"><img src="../assets/menu.png" id="menu-img"></button>
 
    </div>
-   <div id="sidebar" :class="{ 'visible': sidebarVisible }">
+   <div id="sidebar">
         <div class="home">
             <RouterLink to="/home">
                 <button class="button">Home</button>
@@ -60,20 +60,15 @@
  }
 
  #sidebar{
-   max-height: 0;
-   overflow: hidden;
-   transition: max-height 0.3s ease-in-out;
-}
-
-.visible {
-   height: auto; 
-   max-height: 520px; 
+  height: 520px; 
+  width: 300px;
+  background-color: var(--color-element);
    z-index: 2;
    top: 5vh;
    left: 0;
    border-bottom-right-radius: 25px;
    position: absolute;
-   transition: max-height 0.3s ease-in-out; 
+   display: none;
 }
 
 .button{
@@ -93,16 +88,19 @@
 
 <script>
 export default{
-   name:"Header",
-   data() {
-    return {
-      sidebarVisible: false
-    };
-  },
+  name:"Header",
   methods: {
-    toggleSidebar() {
-      this.sidebarVisible = !this.sidebarVisible;
+  openmenu() {
+    var x = document.getElementById("sidebar");
+    var computedStyle = window.getComputedStyle(x);
+    if (computedStyle.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
   }
 }
+};
+
+
 </script>
