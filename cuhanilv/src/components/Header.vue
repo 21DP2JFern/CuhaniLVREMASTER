@@ -1,7 +1,12 @@
 <template>
    <div id="Header">
-      <button id="menu-but" @click="openmenu()"><img src="../assets/menu.png" id="menu-img"></button>
-
+        <button id="menu-but" @click="openmenu()"><img src="../assets/menu.png" id="menu-img"></button>
+        <RouterLink to="/home">
+            <h1 id="cuhani-text">ČUHANI</h1>
+        </RouterLink>
+        <RouterLink to="/profile">
+            <button id="profile-but"></button>
+        </RouterLink>
    </div>
    <div id="sidebar">
         <div class="home">
@@ -40,6 +45,18 @@
    width: 100vw;
    height: 5vh;
    background-color: var(--color-element);
+   box-shadow: 0px 0px 250px 50px var(--color-element);
+   place-items: center;
+ }
+
+ #cuhani-text{
+    position: absolute;
+    top:2px;
+    left: 47vw;
+    font: "Inter";
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 35px;
  }
 
  #menu-but{
@@ -50,6 +67,7 @@
    border:0;
  }
 
+ 
  #menu-img{
    height: 5vh;
    width:50px;
@@ -57,6 +75,14 @@
    left:0;
    display:flex;
    position: absolute;
+ }
+
+ #profile-but{
+    position: absolute;
+    right: 0;
+    top:0;
+    height: 5vh;
+    width: 50px;
  }
 
  #sidebar{
@@ -87,19 +113,23 @@
 </style>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default{
-  name:"Header",
-  methods: {
-  openmenu() {
-    var x = document.getElementById("sidebar");
-    var computedStyle = window.getComputedStyle(x);
-    if (computedStyle.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-  }
-}
+    name: "Header",
+    methods: {
+        openmenu() {
+            var x = document.getElementById("sidebar");
+            var computedStyle = window.getComputedStyle(x);
+            if (computedStyle.display === "none") {
+                x.style.display = "block";
+            }
+            else {
+                x.style.display = "none";
+            }
+        }
+    },
+    components: { RouterLink }
 };
 
 
