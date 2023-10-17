@@ -5,7 +5,7 @@
             <h1 id="cuhani-text">ČUHANI</h1>
         </RouterLink>
         <RouterLink to="/profile">
-            <button id="profile-but"></button>
+            <button id="profile-but"><img src="../assets/profile-pic.png" id="profile-img"></button>
         </RouterLink>
    </div>
    <div id="sidebar">
@@ -38,25 +38,28 @@
 </template>
 
 <style>
- #Header{
-   position: absolute;
-   top:0;
-   left:0;
+#Header {
+    position: fixed;
+   top: 0;
+   left: 0;
    width: 100vw;
    height: 5vh;
    background-color: var(--color-element);
    box-shadow: 0px 0px 250px 50px var(--color-element);
-   place-items: center;
+   text-align: center;
  }
 
- #cuhani-text{
-    position: absolute;
-    top:2px;
-    left: 47vw;
+ #cuhani-text {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 150px;
     font: "Inter";
     color: var(--color-text);
     font-weight: 600;
-    font-size: 35px;
+    font-size: 3.5vh;
+    font-size: 3.5vh;
  }
 
  #menu-but{
@@ -83,6 +86,17 @@
     top:0;
     height: 5vh;
     width: 50px;
+    background: transparent;
+    border: none;
+ }
+
+ #profile-img{
+    height: 4.6vh;
+    width:50px;
+    top:0;
+    left:0;
+    display:flex;
+    position: absolute;
  }
 
  #sidebar{
