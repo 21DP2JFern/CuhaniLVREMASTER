@@ -34,15 +34,17 @@ body{
   display:block;
 }
 
-#header {
-  font: "Inter";
+#header{
+  font:"Inter";
   font-size: 80px;
   font-weight: bold;
-  display: flex;
-  position: relative;
-  width: 300px;
-  margin: 0;
-  padding: 0;
+  display:flex;
+  position:relative;
+  left: 69px;
+  top: 40px;
+  width:300px;
+  margin:0;
+  padding:0;
 }
 
 #input-container {
