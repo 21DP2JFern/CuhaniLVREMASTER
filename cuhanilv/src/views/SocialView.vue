@@ -7,27 +7,40 @@
         <div id="friend-prof-container">
             <div class="friend-card">
                 <div class="prof-pic"></div>
+                <p class="FUsername">Dave420</p>
+                <button class="ViewFProf">View profile</button>
             </div>
             <div class="friend-card">
                 <div class="prof-pic"></div>
+                <p class="FUsername">Dave420</p>
+                <button class="ViewFProf">View profile</button>
             </div>
             <div class="friend-card">
                 <div class="prof-pic"></div>
+                <p class="FUsername">Dave420</p>
+                <button class="ViewFProf">View profile</button>
             </div>
             <div class="friend-card">
                 <div class="prof-pic"></div>
+                <p class="FUsername">Dave420</p>
+                <button class="ViewFProf">View profile</button>
             </div>
             <div class="friend-card">
                 <div class="prof-pic"></div>
+                <p class="FUsername">Dave420</p>
+                <button class="ViewFProf">View profile</button>
             </div>
             <div class="friend-card">
                 <div class="prof-pic"></div>
+                <p class="FUsername">Dave420</p>
+                <button class="ViewFProf">View profile</button>
             </div>
         </div>
     </div>
 
     <div id="find-friends-div">
-
+        <h1 id="friends-header">Find friends</h1>
+        <Line id="line" />
     </div>
 
     <span id="bottom"></span>
@@ -91,6 +104,7 @@
     .friend-card{
         height: 390px;
         width: 280px;
+        top: 0;
         margin-right: 30px;
         border-radius: 25px;
         background-color: var(--color-red);
@@ -107,6 +121,35 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 35px;
+    }
+
+    .FUsername{
+        font: "Inter";
+        color: white;
+        position: relative;
+        font-size: 30px;
+        font-weight: 500;
+        margin-left: 80px;
+        margin-top: 20px;
+        
+    }
+
+    .ViewFProf{
+        height:40px;
+        width: 150px;
+        border: none;
+        border-radius: 25px;
+        display:flex;
+        position:relative;
+        top: 20px;
+        left: 65px;
+        display: table-cell;
+        vertical-align: middle;
+        background-color: var(--color-dark-red);
+        color: var(--color-text);
+        font: "Inter";
+        font-size: 16px;
+        font-weight: 550;
     }
 
     #find-friends-div{

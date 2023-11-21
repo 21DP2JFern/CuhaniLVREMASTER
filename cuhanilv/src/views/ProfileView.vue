@@ -6,8 +6,11 @@
             <img src="../assets/profile-pic.png" id="profile-pic">
         </div>
         <button id="edit-but">Edit Profile</button>
-        <p id="username">username</p>
+        <p id="username">USERNAME</p>
+        <p id="name">NAME</p>
+        
     </div>
+    <Line id="Uline" />
     
 </div>
 </template>
@@ -57,19 +60,38 @@
 }
 
 #username{
+    font: "inter";
+    font-size: 35px;
     position:relative;
-    top:0px;
-    left: 350px;
+    margin-top:-215px;
+    left: 280px;
+}
+
+#name{
+    font: "inter";
+    font-size: 30px;
+    position:relative;
+    margin-top:0px;
+    left: 280px;
+}
+
+
+#Uline{
+
+    
+        
 }
 </style>
 
 <script>
 import Header from '../components/Header.vue'
+import Line from '../components/line.vue'
 
 export default{
     name: "Home",
     components:{
-        Header
+        Header,
+        Line
     }
 }
 </script>
