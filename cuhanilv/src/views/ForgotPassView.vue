@@ -3,18 +3,16 @@
   <div class="LoginWindow">
    <h1 id="header">ČUHANI</h1>  
    <form>
+
+    <p id="ForgotPassMessage">Enter your email address and we'll send you a link to reset your password</p>
     <div id="input-container">
         <input type="text" placeholder="E-MAIL" id="email">
-        <input type="password" placeholder="PASSWORD" id="password">
-        <RouterLink to="/ForgotPass" id="ForgotPass">Forgot password</RouterLink>
     </div>
-
-    <RouterLink to="/home" id="home">
-      <button id="login-but">LOGIN</button>
+    <RouterLink to="/ResetPass" id="send">
+      <button id="send-but">Send</button>
     </RouterLink>
-
-    <p>Dont have an account?</p>
-    <RouterLink to="/register" id="register">Register</RouterLink>
+    <p id="or">Or</p>
+    <RouterLink to="/register" id="register">Create new account</RouterLink>
    </form> 
   </div>
 </template>
@@ -47,9 +45,22 @@ body{
   padding:0;
 }
 
+p {
+  width: 16vw;
+  font-size: 16px;
+  display: flex;
+  position: relative;
+  text-align: center;
+}
+
+#ForgotPassMessage{
+  top: 7vh;
+  left: 4vw;
+}
+
 #input-container {
   width: 300px;
-  height: 240px;
+  height: 180px;
   display: block;
   position: relative;
   top: 45px;
@@ -74,21 +85,10 @@ input::placeholder {
 }
 
 #email {
-  margin-top: 0;
+  margin-top: 45px;
 }
 
-#password {
-  margin-top: 20px;
-}
-
-#ForgotPass {
-  margin-left: 10px;
-  font: "Inter";
-  font-size: 13px;
-  color: var(--color-underline-gray);
-}
-
-#login-but {
+#send-but {
   height: 45px;
   width: 150px;
   border: none;
@@ -104,26 +104,23 @@ input::placeholder {
   font-size: 18px;
 }
 
-#login-but:hover {
+#send-but:hover {
   transform: scale(1.10);
   border: 1px white solid;
 }
 
-#home {
+#send {
   text-decoration: none;
 }
 
-p {
-  top: 23px;
-  left: 145px;
-  font-size: 16px;
-  display: flex;
-  position: relative;
+#or{
+  margin-top: 2vh;
+  left: 11.2vw;
 }
 
 #register {
-  left: 195px;
-  top: 25px;
+  left: 7.7vw;
+  top: 2vh;
   font-size: 18px;
   display: flex;
   position: relative;

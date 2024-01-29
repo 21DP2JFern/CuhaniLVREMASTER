@@ -14,19 +14,19 @@
                 <button class="button">Home</button>
             </RouterLink>
         </div>
-        <div class="social">
-            <RouterLink to="/social">
-                <button class="button">Social</button>
+        <div class="news">
+            <RouterLink to="/news">
+                <button class="button">News</button>
             </RouterLink>
         </div>
-        <div class="games">
-            <RouterLink to="/games">
-                <button class="button">Games</button>
+        <div class="Forums">
+            <RouterLink to="/Forums">
+                <button class="button">Forums</button>
             </RouterLink>
         </div>
-        <div class="wallet">
-            <RouterLink to="/wallet">
-                <button class="button">Wallet</button>
+        <div class="Friends">
+            <RouterLink to="/friends">
+                <button class="button">Friends</button>
             </RouterLink>
         </div>
         <div class="log-out">
