@@ -6,6 +6,7 @@ import ProfileView from '../views/ProfileView.vue'
 import SocialView from '../views/SocialView.vue'
 import ForgotPassView from '../views/ForgotPassView.vue'
 import NewsView from '../views/NewsView.vue'
+import ForumsHubView from '../views/ForumsHubView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,7 +46,13 @@ const router = createRouter({
       path: '/news',
       name: 'news',
       component: NewsView
+    },
+    {
+      path: '/forums_hub',
+      name: 'forumshub',
+      component: SocialView
     }
+
   ]
 })
 
