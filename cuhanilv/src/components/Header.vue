@@ -20,7 +20,7 @@
             </RouterLink>
         </div>
         <div class="Forums">
-            <RouterLink to="/Forums">
+            <RouterLink to="/forums_hub">
                 <button class="button">Forums</button>
             </RouterLink>
         </div>
@@ -45,7 +45,7 @@
    width: 100vw;
    height: 5vh;
    background-color: var(--color-element);
-   box-shadow: 0px 0px 250px 50px var(--color-element);
+   box-shadow: 0px 0px 100px 20px var(--color-element);
    text-align: center;
  }
 

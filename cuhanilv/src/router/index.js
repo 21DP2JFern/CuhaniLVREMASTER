@@ -50,7 +50,7 @@ const router = createRouter({
     {
       path: '/forums_hub',
       name: 'forumshub',
-      component: SocialView
+      component: ForumsHubView
     }
 
   ]
