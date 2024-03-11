@@ -1,145 +1,98 @@
-import { RouterLink } from 'vue-router';
 <template>
   <div class="RegWindow">
-   <h1 id="header">ČUHANI</h1>  
-   <form @submit.prevent="register">
-    <div id="input-container">
-        <input type="email" placeholder="E-mail" id="email" v-model="email" required>
-        <input type="text" placeholder="name" id="name" v-model="name" required>
-        <input type="password" placeholder="Password" id="password" v-model="password" required>
-        <input type="password" placeholder="Confirm password" id="con-password" v-model="password_confirmation" required>
-
-    </div>
-    
-   </form> 
-   <RouterLink to="/" id="login">
-      <button id="reg-but">REGISTER</button>
-    </RouterLink>
+    <h1 id="header">ČUHANI</h1>  
+    <form @submit.prevent="register">
+      <div id="input-container">
+        <input type="email" placeholder="E-mail" v-model="formData.email" required>
+        <input type="text" placeholder="Name" v-model="formData.name" required>
+        <input type="password" placeholder="Password" v-model="formData.password" required>
+        <input type="password" placeholder="Confirm password" v-model="formData.password_confirmation" required>
+      </div>
+      <button type="submit" id="reg-but">REGISTER</button>
+      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </form> 
   </div>
 </template>
 
 <script>
-    import axios from 'axios';
+import axios from 'axios';
 
-    export default{
-      data(){
-        return{
-          email: "",
-          name: "",
-          password: "",
-          password_confirmation: ""
-        };
+export default {
+  data() {
+    return {
+      formData: {
+        email: "",
+        name: "",
+        password: "",
+        password_confirmation: ""
       },
-
-      methods:{
-        async register(){
-          try{
-            const response = await axios.post('http://127.0.0.1:8000/api/register', {
-              email: this.email, 
-              name: this.name,
-              password: this.password,
-              password_confirmation: this.password_confirmation
-            });
-
-            console.log(response.data);
-            console.log("sagaja");
-            this.$router.push("/login");
-          }catch(error){
-            console.error("error during registration!", error);
-            alert("AAAAAAAAAA nesanaca!");
-          }
-        },
-      },
+      errorMessage: ""
     };
+  },
+  methods: {
+    async register() {
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/api/register', this.formData);
+        console.log(response.data);
+        alert("Registration successful!");
+        // Optionally, you can redirect to another route upon successful registration
+        this.$router.push("/");
+      } catch (error) {
+        if (error.response && error.response.data && error.response.data.errors) {
+          this.errorMessage = Object.values(error.response.data.errors)[0][0];
+        } else {
+          this.errorMessage = "Registration failed! Please try again later.";
+        }
+        console.error(error.response.data);
+        alert(this.errorMessage);
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>
-.RegWindow{
+.RegWindow {
   width: 450px;
   height: 600px;
   background-color: var(--color-element);
   border-radius: 25px;
   box-shadow: 0px 0px 300px 50px var(--color-element);
   display:block;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-#header{
-  font:"Inter";
-  font-size: 80px;
+#header {
+  font-size: 48px;
   font-weight: bold;
-  display:flex;
-  position:relative;
-  left: 69px;
-  top: 40px;
-  width:300px;
-  margin:0;
-  padding:0;
+  margin-bottom: 20px;
 }
 
-#input-container{
-  width:300px;
-  height: 370px;
-  display: block;
-  position: relative;
-  top: 40px;
-  left: 77px;
-  
+#input-container {
+  margin-bottom: 20px;
 }
 
-input{
-  border-radius: 25px;
-  border:0;
-  font-size: 20px;
-  text-indent: 20px;
-  font:"Inter";
-  color: var(--color-text);
-  background-color: var(--color-light-dark-red);
-  width:300px;
-  margin-top: 5px;
-  height: 60px;
+input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  font-size: 16px;
 }
 
-input::placeholder{
-  color: var(--color-text);
-  font-size: 17px;
-}
-
-#Fname{
-  margin-top: 5px;
-  height: 60px;
-  width:145px;
-}
-
-#Lname{
-  margin-top: 5px;
-  margin-left: 10px;
-  height: 60px;
-  width:145px;
-}
-
-#reg-but{
-  height:45px;
-  width: 150px;
-  border: none;
-  border-radius: 25px;
-  display:flex;
-  position:relative;
-  left: 150px;
-  display: table-cell;
-  vertical-align: middle;
+#reg-but {
+  width: 100%;
+  height: 40px;
   background-color: var(--color-red);
-  color: var(--color-text);
-  font: "Inter";
-  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-#login-but:hover{
-  transform: scale(1.10);
-  border: 1px white solid;
+.error-message {
+  color: red;
+  margin-top: 10px;
 }
-
-#login{
-  text-decoration: none;
-}
-
 </style>
